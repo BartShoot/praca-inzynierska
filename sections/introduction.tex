@@ -1,12 +1,26 @@
 
-Przetwarzanie obrazów to dziedzina informatyki zajmująca się automatyzacją zadań związanych z obrazami. Obejmuje ona szeroki zakres zagadnień, takich jak sztuczna inteligencja, uczenie maszynowe, analiza danych i grafika komputerowa.
+Przetwarzanie obrazów to zbiór wielu algorytmów które należy rozróżnić na dwie dziedziny ze względu na rodzaj reprezentowanych i manipulowanych informacji.
+Pierwsza dotyczy analogowej reprezentacji danych \cite{signalProcessing}, gdzie informacje są w formie ciągłych sygnałów odwzorowujących obrazy. 
+Operacje na nich są realizowane przez modyfikacja impulsów elektrycznych reprezentujących informacje. 
+Technologia ta umożliwiła rozwój transmisji telewizyjnej \cite{times1926}.
+Cyfrowe przetwarzanie obrazów \cite{digitalImageProcessing} jest nowszą technologią.
+Dane są reprezentowane poprzez wielowymiarowe macierze wartości \cite{OpenCVMat}. 
+Mogą one odpowiadać kolorowi obrazu w danym miejscu, wartościom chmury punktów lub innym informacjom które mogą zostać przetworzone cyfrowo. 
+Modyfikacja odbywa się przez zmiany wartości macierzy. 
+Obie dziedziny mają swoje miejsca i zastosowania ale niniejsza praca zajmie się cyfrowym przetwarzaniem obrazów.
 
-Oprogramowanie do przetwarzania obrazów jest wykorzystywane w wielu różnych dziedzinach, takich jak medycyna, przemysł, bezpieczeństwo i rozrywka. W medycynie jest wykorzystywane do diagnostyki, obrazowania medycznego i chirurgii. W przemyśle jest wykorzystywane do kontroli jakości, automatyzacji i inspekcji. W bezpieczeństwie jest wykorzystywane do monitorowania, rozpoznawania twarzy i identyfikacji. W rozrywce jest wykorzystywane do tworzenia efektów specjalnych, animacji i gier wideo.
+Przetwarzania obrazów jest wykorzystywane w wielu różnych dziedzinach: 
+\begin{itemize}
+    \item \textbf{Medycyna:} Diagnostyka, planowanie zabiegów chirurgicznych i monitorowanie stanu pacjentów \cite{skszymon2023}. 
+    Dane medyczne uzyskiwane w formie obrazów cyfrowych są ustandaryzowane przez Digital Imaging and Communications in Medicine \cite{DICOMPart01}.
+    \item \textbf{Przemysł:} Kontrola jakości, automatyzacja i inspekcja. Systemy wizyjne potrafią szybciej i dokładniej odkryć defekty produktów na liniach produkcyjnych \cite{Nix2024}.
+    \item \textbf{Bezpieczeństwo:} Monitorowanie i rozpoznawanie twarzy. Drony ze wsparciem przetwarzania obrazów są używane przez służby bezpieczeństwa w trudnych warunkach \cite{dji}.
+    \item \textbf{Rozrywka:} Tworzenie efektów specjalnych dla filmów, gier i animacji. Transformacje przestrzeni kolorów i korekcje nagrań w celu poprawienia efektu końcowego \cite{cinema}.
+\end{itemize}
 
-Jedną z popularnych bibliotek do przetwarzania obrazów jest OpenCV. OpenCV to darmowy, otwartoźródłowy pakiet oprogramowania dla systemów operacyjnych Windows, macOS i Linux. Zapewnia szeroki zakres funkcji do przetwarzania obrazów, w tym: podstawowe operacje takie jak filtrowanie, skalowanie i konwersja formatów, wykrywania i rozpoznawania obiektów czy obsługę algorytmów do analizy wideo.
+Przetwarzanie obrazów jako manipulacja danymi cyfrowymi została stworzona przez programistów \cite{computerProcessing}. 
+Kod to podstawowa wersja interakcji człowieka z komputerem, ale większość użytkowników tych urządzeń nie potrafi programować. 
+Żeby dziedzina tej nauki była przystępna dla większej liczby osób należy stworzyć aplikację z prostym i funkcjonalnym graficznym interfejsem użytkownika. 
 
-W ramach czasu, który został poświecony na niniejszy projekt zakres możliwości ograniczono do prostych operacji przetwarzania obrazów bez uwzględniania wideo oraz wszelkiego rodzaju danych oprócz samych obrazów. 
-
-OpenCV jest często wykorzystywany do tworzenia oprogramowania do przetwarzania obrazów. Jednak jego interfejs użytkownika jest dostosowany do programistów, a nie do użytkowników końcowych. Oznacza to, że użytkownicy końcowi muszą mieć podstawowe umiejętności programowania, aby korzystać z oprogramowania stworzonego w oparciu o OpenCV.
-
-W tej pracy naukowej proponujemy nowe oprogramowanie do przetwarzania obrazów oparte na bibliotece OpenCV. Oprogramowanie to posiada funkcjonalny interfejs graficzny, który ułatwia użytkownikom końcowym korzystanie z niego.
+W tej pracy naukowej proponujemy nowe oprogramowanie do przetwarzania obrazów oparte na bibliotece OpenCV. 
+Aplikacja posiada funkcjonalny interfejs graficzny, który ułatwia użytkownikom końcowym obsługę tej biblioteki bez potrzeby znajomości programowania.
