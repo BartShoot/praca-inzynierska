@@ -35,8 +35,10 @@ Wraz z ich rozwojem i wzrostem popularności cyfrowe przetwarzanie obrazów prze
 Obecnie około 80\% populacji krajów rozwiniętych jest w posiadaniu smartfona \cite{smartphones}, który na swoim wyposażeniu ma kamerę cyfrową. 
 Są one ograniczone poprzez fizyczny rozmiar matrycy oraz jakość soczewek, które mogą zmieścić się w telefonach komórkowych. 
 Pomimo tego dzięki przetwarzaniu obrazów można uchwycić za ich pomocą imponujące zdjęcia \cite{pixel}. 
-Nowoczesne telefony są w stanie zachować na zdjęciu nocnym detale które może być ciężko zobaczyć ludzkim okiem \cite{nightMode} przez szybkie łączenie wielu obrazów o różnych długościach ekspozycji, redukcji szumów i korekcji kolorów.   
+Nowoczesne telefony są w stanie zachować na zdjęciu nocnym detale które może być ciężko zobaczyć ludzkim okiem \cite{nightMode} przez szybkie łączenie wielu obrazów o różnych długościach ekspozycji, redukcji szumów i korekcji kolorów.  
+
 \subsection{Przegląd istniejących rozwiązań}
+
 \subsubsection{Photoshop}
 \begin{figure}[H]
     \centering
@@ -47,11 +49,12 @@ Nowoczesne telefony są w stanie zachować na zdjęciu nocnym detale które moż
 
 Wydany w 1990 roku do tworzenia i edytowania obrazów rastrowych jest jednym z najbardziej popularnych programów, a jego nazwa przedarła się do języka potocznego jako zamiennik dla fotomontażu. 
 Użytkownikami tego oprogramowania są przeważnie artyści, fotografowie i twórcy internetowych memów. 
-Narzędzia są przystosowane do łatwości obsługi przez mniej zaawansowanych użytkowników i wszystko posiada przyjazny graficzny interfejs użytkownika. 
+To narzędzie jest przystosowane do łatwości obsługi przez mniej zaawansowanych użytkowników i wszystko posiada przyjazny graficzny interfejs użytkownika. 
 
-Istnieją tam operacje, które pozwalają na przetwarzanie obrazów, ale często nie odnoszą się one bezpośrednio do operacji znanych z bibliotek do przetwarzania obrazów, ich obsługa jest uproszczona i przystosowana do bardziej artystycznych zastosowań. 
+Funkcje, które pozwalają na przetwarzanie obrazów często nie odnoszą się bezpośrednio do operacji zawartych w znanych bibliotekach do przetwarzania obrazów. 
+Ich obsługa jest uproszczona i przystosowana do bardziej artystycznych zastosowań. 
 Bez zastosowania szczególnej ostrożności - jak tworzenie nowych warstw po każdej operacji lub częste zapisywanie kopii zapasowej obrazu – przetwarzanie obrazów często jest destruktywne, nie możemy odnieść się do dowolnego momentu w ciągu naszych operacji w celu dopasowania jej parametrów. 
-Przetwarzanie innego obrazu za pomocą tego samego procesu jest problematyczne, gdy niektóre operacje są destruktywne.
+Przetwarzanie innego obrazu za pomocą tego samego procesu jest problematyczne, gdyż wymaga to ciągłego śledzenia warstw. Wiele operacji trzeba powtórzyć indywidualnie ponieważ nie zapisujemy jej parametrów tylko rezultat poprzedniego wykonania. Wiele bardziej zaawansowanych procesów nie jest możliwych do zrealizowania za pomocą standardowych opcji dostępnych w programie. Historia operacji jest też ograniczona i nie można wyświetlić pełnej historii na jednym ekranie - można jedynie zamieniać stan aktualny na wcześniejszy.
 
 \subsubsection{ImageJ}
 \begin{figure}[H]
@@ -60,13 +63,16 @@ Przetwarzanie innego obrazu za pomocą tego samego procesu jest problematyczne, 
     \caption{ImageJ}
     \label{fig:imagej}
 \end{figure}
-Wydany w 1997 roku program ImageJ został wykonany przez National Institutes of Health, został tworzony podstawowo z zamiarem analizy obrazów w zastosowaniach medycznych. 
-Odtwarza dokładnie wiele operacji z bibliotek do przetwarzania obrazów i kod aplikacji jest otwarty. 
-Działa to w oparciu o Javę i ma bardzo niskie wymagania sprzętowe jak na obecne czasy.
 
-Program jest jednak przestarzały, mogą pojawić się problemy z uruchomieniem na nowszych systemach. Interfejs użytkownika jest przestarzały oraz jego układ jest niepraktyczny biorąc pod uwagę przetwarzanie obrazów. 
-Wszystkie operacje są schowane pod 1-2 poziomami menu. Operacje są destrukcyjne oraz nie da się przygotować ciągów operacji wcześniej. 
-Od dawna nie jest rozwijany, został zastąpiony przez ImageJ2 który pozwala na przetwarzanie obrazów wielowymiarowych z dodatkowymi danymi np z mikroskopów elektronowych, skanerów itp.
+Wydany w 1997 roku program ImageJ został wykonany przez National Institutes of Health, został tworzony podstawowo z zamiarem analizy obrazów w zastosowaniach medycznych. 
+Odtwarza dokładnie wiele operacji z bibliotek do przetwarzania obrazów i kod aplikacji jest otwartoźródłowy - każdy może go zobaczyć, pomóc w rozwoju lub stworzyć własną wersję. 
+Napisany został w języku Java i ma bardzo niskie wymagania sprzętowe jak na obecne czasy.
+
+Program jest jednak przestarzały, mogą pojawić się problemy z uruchomieniem na nowszych systemach. Interfejs użytkownika wygląda archaicznie oraz jego układ jest niepraktyczny biorąc pod uwagę przetwarzanie obrazów. 
+Wszystkie operacje są schowane pod 1-2 poziomami menu. 
+Operacje są destrukcyjne - zmieniają dane, które przetwarzamy więc to użytkownik musi pilnować aby mieć kopię swoich obrazów. 
+Nie da się przygotować ciągów operacji wcześniej za pomocą interfejsu graficznego, trzeba użyć do tego ich języka programowania ImageJ Macro \cite{imagejbatch}. 
+Od dawna nie jest rozwijany, został zastąpiony przez ImageJ2, który pozwala na przetwarzanie obrazów wielowymiarowych z dodatkowymi danymi np. z mikroskopów elektronowych, skanerów itp.
 
 \subsubsection{Fiji}
 \begin{figure}[H]
@@ -75,10 +81,11 @@ Od dawna nie jest rozwijany, został zastąpiony przez ImageJ2 który pozwala na
     \caption{Fiji - sukcesor ImageJ}
     \label{fig:fiji}
 \end{figure}
+
 Projekt open source oparty o ImageJ2. Oprócz podstawowych operacji wbudowanych w ImageJ posiada też wiele pluginów znacząco rozszerzających możliwości programu. 
 Są one skupione na wspomaganiu przetwarzania obrazów skupionych na dziedzinie neurobiologii, ale możliwości są na tyle szerokie, że wiele innych dziedzin nauki z niego korzysta.
 
-Podstawowe działanie programu nie różni się od ImageJ więc wszystkie jego problemy są też tutaj obecne. Poprawa istnieje tu pod względem uruchamiania tego oprogramowania na nowszych systemach.
+Podstawowe działanie programu nie różni się od ImageJ więc, wszystkie jego problemy są też tutaj obecne. Jednakże poprawiona została jego kompatybilność z najnowszymi systemami operacyjnymi.
 
 \subsubsection{GIMP}
 \begin{figure}[H]
@@ -87,9 +94,10 @@ Podstawowe działanie programu nie różni się od ImageJ więc wszystkie jego p
     \caption{GIMP wersja 2.10}
     \label{fig:gimp}
 \end{figure}
-Wydany w 1998 roku GNU Image Manipulation Program jest tworzony jako konkurencja dla Photoshopa. Program też w pierwszej kolejności jest tworzony z myślą o artystach, ale posiada więcej zaawansowanych opcji jak np. konwolucje macierzowe które można dowolnie edytować, dając duże możliwości filtrowania obrazów.
 
-Pomimo odwzorowaniu większej ilości operacji ze standardowych bibliotek do przetwarzania obrazów i większej kontroli nad niektórymi z nich nadal występuje problem destruktywnego przetwarzania obrazów który wynika z pracy bezpośrednio na obrazie jak w Photoshopie i wymaga starań przy warstwach aby nie tracić bezpowrotnie swoich pośrednich operacji w dłuższym ciągu.
+Wydany w 1998 roku GNU Image Manipulation Program jest tworzony jako darmowa konkurencja dla Photoshopa, którego licencja jest miesięczną subskrypcją. Program też w pierwszej kolejności jest tworzony z myślą o artystach, ale posiada więcej zaawansowanych opcji jak np. konwolucje macierzowe które można dowolnie edytować, dając duże możliwości filtrowania obrazów.
+
+Pomimo odwzorowaniu większej liczby operacji ze standardowych bibliotek do przetwarzania obrazów i większej kontroli nad niektórymi z nich nadal występuje problem destruktywnego przetwarzania obrazów. Wynika to z pracy bezpośrednio na obrazie jak w Photoshopie i wymaga szczególnej uwagi przy zarządzaniu warstwami aby nie tracić bezpowrotnie swoich pośrednich operacji w dłuższym ciągu.
 
 \subsubsection{Adobe Substance Designer}
 \begin{figure}[H]
@@ -98,12 +106,15 @@ Pomimo odwzorowaniu większej ilości operacji ze standardowych bibliotek do prz
     \caption{Adobe Substance Designer}
     \label{fig:designer}
 \end{figure}
-Wydany w 2007 roku program był dla mnie główną inspiracją dla tego projektu. 
-Potężną zaletą jest to, że operują na nodach – układamy z „bloczków” serię operacji, które są wykonywane na obrazie, który importujemy do programu lub generujemy go od początku w nim. Każdy dowolny node można kliknąć i zmienić wszystkie parametry jego operacji niezależnie w którym miejscu ciągu znajduje się, a jego wynik i wszystkie następne operacje zależne od niego są obliczane ponownie na podstawie zmienionego wyniku. 
-Zmiana przetwarzanego obrazu polega na przeciągnięciu połączenia z obecnego node’a z naszym plikiem wejściowym na nowego node’a a wszystkie kolejne operacje zaktualizują się samodzielnie.
 
-Program ten niestety ma wiele ograniczeń związanych z tym, że nie jest stworzony do ogólnego przetwarzania obrazów tylko do tworzenia materiałów/tekstur do grafiki komputerowej. 
+Wydany w 2007 roku program był główną inspiracją dla tego projektu. 
+Jego dużą zaletą jest to, że tworzenie algorytmów bazuje na układaniu bloczków (nodów). 
+Ułożony graf jest wykonywany na obrazie, który importujemy do programu lub generujemy go od początku w nim. 
+Każdy dowolny node można kliknąć i zmienić wszystkie parametry jego operacji, niezależnie w którym miejscu ciągu znajduje się.
+Jego wynik i wszystkie następne operacje, które są zależne od niego są obliczane ponownie na podstawie zmienionego wyniku. 
+Zmiana przetwarzanego obrazu polega na przeciągnięciu połączenia z obecnego węzła z naszym plikiem wejściowym na nowy bloczek. Następnie propagowana jest zmiana na wszystkie kolejne operacje, których wynik jest aktualizowany automatycznie.
+
+Opisywany program ten ma wiele ograniczeń związanych z tym, że nie jest stworzony do ogólnego przetwarzania obrazów. Został natomiast stworzony do tworzenia materiałów/tekstur do grafiki komputerowej. 
 Obrazy są ograniczone do boków o długości $2\textsuperscript{n}$, najlepiej kwadratowych. 
 Parametry operacji są często uproszczone, ponieważ mimo większej złożoności aplikacji, jest ona nadal skierowana do artystów. 
 Rodzaje operacji i wspierane formaty pikseli w pliku są przystosowane do wymagań grafiki komputerowej.
-
