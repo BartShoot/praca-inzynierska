@@ -1,15 +1,95 @@
-Zastosowane technologie:
+Wybór technologii ma duży wpływ na różne aspekty projektu programistycznego.
+Od niego zależy na jakich platformach może zostać on tworzony i uruchamiany.
+Dobre biblioteki potrafią znacząco ułatwić tworzenie oprogramowania pozwalając skupić się programistom na tworzeniu funkcjonalności aplikacji.
+Nie ma potrzeby tworzyć nowego systemu wyświetlania interfejsu użytkownika na potrzebę każdego projektu osobno, gdy jest wybór wielu bardzo dobrze wspieranych technologii na każdą platformę.
 
+Przy wyborze technologii dla aplikacji oprócz funkcjonalności zostały wzięte pod uwagę:
 \begin{itemize}
-    \item \textbf{Otwarty kod źródłowy:} OpenSource jest spoko
-    
+    \item \textbf{Dobrze napisaną dokumentację:} Obsługa biblioteki programistycznej jest dużo łatwiejsza, gdy jej twórca udostępnia dobrze napisane materiały jak z niej korzystać.
+    \item \textbf{Otwarty kod źródłowy:} Projekty open source udostępniają swój kod - nawet w momencie, kiedy dokumentacja nie jest idealna możemy zobaczyć jak dana funkcja działa.
+    \item \textbf{Aktywne utrzymywanie:} Biblioteka bez aktualizacji do nowszych wersji może sprawiać problemy w postaci luk bezpieczeństwa lub problemami z kompatybilnością.
+    \item \textbf{Dojrzała technologia:} Korzystając z kodu tworzonego i używanego od wielu lat można spodziewać się większej ilości przykładowych użyć, dopracowanego interfejsu projektu oraz pozbawionego błędów działania.
 \end{itemize}
 
+\subsection{Język programowania}
 
-\subsection{OpenCV}
-Jedną z popularnych bibliotek do przetwarzania obrazów jest OpenCV. 
-OpenCV to darmowy, otwartoźródłowy pakiet oprogramowania dla systemów operacyjnych Windows, macOS i Linux. 
+Jest to kluczowy wybór, ma wpływ na większość następnie wybranych technologii.
+Język programowania ma wpływ na wydajność aplikacji, trudność jej tworzenia oraz późniejszego utrzymania.
+Dzięki wyborze popularnego języka można mieć dostęp do bardzo szerokiej gamy gotowych bibliotek rozwiązujących popularne problemy jak komunikacja z serwerami czy zapisywanie i odczytywanie formatu JSON.
+
+\subsubsection{C\#}
+
+Wieloparadygmatowy język ogólnego przeznaczenia tworzony przez Microsoft od ponad 20 lat \cite{csharp}.
+Jest on kompilowany przed uruchomieniem co daje przewagę wydajności nad językami interpretowanymi.
+Można obecnie pisać w nim aplikacje na komputery stacjonarne, telefony, przeglądarki czy serwery.
+Posiada narzędzie do zarządzania bibliotekami NuGet \cite{nuget} pozwalająca na łatwe dodanie zależności do projektu.
+
+\subsection{Platforma programowa}
+
+Wiele języków programowania posiada swoją platformę programistyczną - jest to narzędzie za pomocą którego można tworzyć projekty, zarządzać bibliotekami, budować i uruchamiać aplikację.
+
+\subsubsection{.NET Core}
+
+.NET Core to platforma programistyczna opracowana przez firmę Microsoft, stanowiąca otwartoźródłowe i wieloplatformowe środowisko do tworzenia różnorodnych typów aplikacji, w tym aplikacji internetowych, usług sieciowych oraz aplikacji konsolowych.
+Obsługuje wiele języków z których najpopularniejszy jest C\# \cite{dotnet}.
+Jej struktura podzielona jest na moduły takie jak środowisko uruchomieniowe, kompilacja czy wbudowane biblioteki.
+
+\subsection{Interfejs użytkownika}
+
+W celu zapewnienia użytkownikom szybkiego wykonywania operacji wybrano jako docelową platformę komputer stacjonarny.
+Zawęża to wybór możliwych technologii tworzenia interfejsu.
+Rozważone zostały dwie technologie - Avalonia UI \cite{AvaloniaUI} oraz WPF \cite{wpf}.
+Pierwsza z nich jest nowsza i aktywnie rozwijana, może działać na wielu platformach w przeciwieństwie do rozwiązania stworzonego przez Microsoft. 
+W momencie decydowania o interfejsie użytkownika jednak pojawiały się błędy w funkcjonalnościach potrzebnych do działania projektu.
+
+\subsubsection{Windows Presentation Foundation}
+
+Jest to platforma graficzna opracowana przez firmę Microsoft, została po raz pierwszy wprowadzona jako część .NET Framework w 2006 roku \cite{wpfHistory}. 
+Umożliwia tworzenie bogatych interfejsów użytkownika dla aplikacji stworzonych na system Windows.
+Elementy są wyświetlane wektorowo co pozwala na dowolne skalowanie elementów. 
+Widoki są definiowane w formacie XAML co pozwala na oddzielenie logiki biznesowej od warstwy prezentacji.
+Platforma ta umożliwia powiązanie elementów interfejsu z danymi aplikacji co pozwala na szybkie aktualizowanie widoku z najnowszymi wynikami.
+
+\subsubsection{Nodify}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{./images/Picture7.png}
+    \caption{Opis elementów edytora węzłów \cite{node}.}
+    \label{fig:nodify}
+\end{figure}
+
+Biblioteka Nodify \cite{nodify} jest otwartoźródłowym projektem implementującym edytor węzłowy \autoref{fig:nodify} dla biblioteki WPF. 
+Poprawna implementacja tego projektu daje możliwość dodawania bloczków i łączenie ich w ciągi. 
+Wystarczy zaimplementować co dzieje się z danymi w węzłach oraz jak zostają one przekazywane dalej żeby mieć funkcjonalny interfejs użytkownika. 
+
+\subsubsection{WPF UI}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{./images/Picture8.png}
+    \caption{Galeria elementów WPF UI. Opracowanie własne.}
+    \label{fig:wpfui}
+\end{figure}
+
+Biblioteka WPF UI \cite{wpfui} modyfikuje i dodaje elementy interfejsu używane w Windows Presentation Foundation \autoref{fig:wpfui}. 
+Jest ona zgodna z systemem projektowania interfejsu Fluent 2 \autoref{fig:winui3} od Microsoftu używanego w wielu aplikacjach dla systemu Windows 11. 
+Pozwala to na utrzymanie nowoczesnej stylistyki w projekcie bez potrzeby tworzenia skomplikowanych stylów imitujących WinUI 3 od zera.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{./images/Picture9.png}
+    \caption{Galeria elementów WinUI 3. Opracowanie własne.}
+    \label{fig:winui3}
+\end{figure}
+
+\subsection{Biblioteka do przetwarzania obrazów}
+\subsubsection{OpenCvSharp}
+Jedną z popularnych bibliotek do przetwarzania obrazów jest OpenCV.
+OpenCV to darmowy, otwartoźródłowy pakiet oprogramowania dla systemów operacyjnych Windows, macOS i Linux.
 Zapewnia szeroki zakres funkcji do przetwarzania obrazów, w tym: podstawowe operacje takie jak filtrowanie, skalowanie i konwersja formatów, wykrywania i rozpoznawania obiektów czy obsługę algorytmów do analizy wideo.
-\subsection{Visual Studio Code}
-\subsection{Git}
-\subsection{GitHub}
+\subsection{Biblioteka do walidacji}
+\subsubsection{Fluent Validation}
+\subsection{Biblioteka do serializacji}
+\subsubsection{Json.NET}
+\subsection{Środowisko developerskie}
+\subsubsection{Microsoft Visual Studio}
+\subsubsection{Git}
