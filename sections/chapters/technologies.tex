@@ -65,7 +65,7 @@ Wystarczy zaimplementować co dzieje się z danymi w węzłach oraz jak zostają
 \subsubsection{WPF UI}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{./images/Picture8.png}
+    \includegraphics[width=0.9\linewidth]{./images/Picture8.png}
     \caption{Galeria elementów WPF UI. Opracowanie własne.}
     \label{fig:wpfui}
 \end{figure}
@@ -76,20 +76,56 @@ Pozwala to na utrzymanie nowoczesnej stylistyki w projekcie bez potrzeby tworzen
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{./images/Picture9.png}
+    \includegraphics[width=0.9\linewidth]{./images/Picture9.png}
     \caption{Galeria elementów WinUI 3. Opracowanie własne.}
     \label{fig:winui3}
 \end{figure}
 
 \subsection{Biblioteka do przetwarzania obrazów}
-\subsubsection{OpenCvSharp}
 Jedną z popularnych bibliotek do przetwarzania obrazów jest OpenCV.
-OpenCV to darmowy, otwartoźródłowy pakiet oprogramowania dla systemów operacyjnych Windows, macOS i Linux.
-Zapewnia szeroki zakres funkcji do przetwarzania obrazów, w tym: podstawowe operacje takie jak filtrowanie, skalowanie i konwersja formatów, wykrywania i rozpoznawania obiektów czy obsługę algorytmów do analizy wideo.
+Nazwa to skrót od \textit{Open Source Computer Vision Library} i wskazuje, że jest to darmowy i otwartoźródłowy projekt skupiony na przetwarzaniu obrazów oraz widzeniu maszynowym.
+Pakiet ten dostępny jest dla systemów Windows, macOS i Linux. 
+Został stworzony w Intel Research Labs w 1999 roku \cite{opencvHistory}. Biblioteka ta jest napisana w języku C\++ i kładzie duży nacisk na prędkość obliczeń. Pozwala ona na przetwarzanie obrazów, wideo, posiada zaawansowane algorytmy wykrywania obiektów, klasyfikacji oraz wiele operacji korzystajacych z sieci neuronowych.
+
+\subsubsection{OpenCvSharp}
+
+Projekt jest tworzony w języku C\# więc nie możemy bezpośrednio odwoływać się do biblioteki OpenCV. Powstało kilka projektów które opakowują oryginalny pakiet w metody którymi możemy się odwołać bez problemu z kodu w platformie .NET. Dwie najpopularniejsze biblioteki tego typu to EmguCV \cite{emgucv} oraz OpenCvSharp \cite{opencvsharp}. 
+Obie cieszą się dużym wsparciem społeczności lecz pierwsza z nich jest mniej zgodna z API oryginalnej paczki oraz jest wolniejsza.
+
 \subsection{Biblioteka do walidacji}
+
+W interfejsie użytkownika należy wprowadzić dane, nie możemy założyć że będą one poprawne.
+Wszystkie wejścia trzeba zabezpieczyć tak by użytkownik nie mógł przerwać działania programu i zawsze wiedział dlaczego jego operacje się nie wykonują.
+
 \subsubsection{Fluent Validation}
+
+Biblioteka Fluent Validation \cite{fluentvalidation} pozwala na proste ustalanie reguł według których ocenia czy dane są prawidłowe oraz przypisanie odpowiedniej wiadomości błędu gdy nie są. Paczka ta jest przejrzysta oraz posiada dobrą dokumentację i wiele przykładów implementacji. 
+
 \subsection{Biblioteka do serializacji}
+
+Serializacja jest potrzebna gdy chcemy zapisać stan naszej aplikacji lub wysłać jakieś dane. Dla wygody użytkownika należy wprowadzić system zapisywania i wczytywaniu plików, żeby mógł wrócić do wcześniej stworzonych ciągów operacji oszczędzając jego czas. 
+
 \subsubsection{Json.NET}
-\subsection{Środowisko developerskie}
+
+Newtonsoft.Json \cite{Newtonsoft.Json} to najpopularniejsza biblioteka do obsługi plików Json w galerii paczek NuGet \cite{jsonMostPop}. 
+Pozwala na serializowanie obiektów i deserializowanie Json'a do obiektów zachowując złożone struktury obiektów i kolekcje oraz posiada wiele parametrów za pomocą których można dopasować jego wyniki do większości zastosowań. 
+
+\subsection{Środowisko deweloperskie}
+
+Odpowiednie środowisko może znacząco przyśpieszyć pracę nad projektem programistycznym. 
+Nowoczesne IDE (ang. \textit{Integrated Development Environment}) zamykają nawiasy, pomagają w poprawianiu błędów, refaktoryzacji i proponują automatyczne uzupełnienia zmiennych czy metod biorąc pod uwagę kontekst kodu w plikach.
+Ważne jest też zadbanie o kontrolę wersji w celu zapisywania stanu projektu oraz śledzeniu zmian zachodzących w nim.
+
 \subsubsection{Microsoft Visual Studio}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{./images/Picture10.png}
+    \caption{Interfejs programu Visual Studio. Opracowanie własne.}
+    \label{fig:visual}
+\end{figure}
+
+Microsoft Visual Studio \cite{visualstudio} to zintegrowane środowisko programistyczne (IDE) opracowane i wydane przez firmę Microsoft. Jest przeznaczone do tworzenia aplikacji komputerowych, w tym aplikacji internetowych, aplikacji mobilnych, aplikacji desktopowych i aplikacji konsolowych. Posiada wiele gotowych zestawów narzędzi do pobrania dla specyficznych typów programów, a jego funkcjonalność dodatkowo można rozszerzać dodatkami pobieranymi z internetu.
+
 \subsubsection{Git}
+
+Git \cite{git} to system kontroli wersji oparty na rozproszeniu danych (ang. \textit{distributed version control system - DVCS}), opracowany przez Linusa Torvaldsa. Jest przeznaczony do śledzenia zmian w plikach i folderach, a także do współpracy nad projektami w czasie rzeczywistym. 
