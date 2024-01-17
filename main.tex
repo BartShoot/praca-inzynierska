@@ -1,7 +1,6 @@
 \documentclass[12pt]{article}
 
 \usepackage[polish]{babel}
-\usepackage[utf8]{inputenc}
 \usepackage{csquotes}
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=2cm]{geometry}
 \usepackage{indentfirst}
@@ -18,7 +17,7 @@
 \setlength{\parskip}{6pt}
 \usepackage[sorting=none, style=nature]{biblatex}
 \addbibresource{bibliography.bib}
-
+\babelprovide[transforms=oneletter.nobreak]{polish}
 \hypersetup{linkcolor=black}
 \usepackage[all]{hypcap}
 \addto\captionspolish{\renewcommand{\figurename}{Rys.}}
