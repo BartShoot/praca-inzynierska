@@ -11,6 +11,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{float}
 \usepackage{fontspec}
+\usepackage{pdfpages}
 \setmainfont{Times New Roman}
 \setlength{\parindent}{1.25cm}
 \linespread{1.5}
@@ -30,6 +31,11 @@
 \input{commands}
 
 \begin{document}
+\includepdf[pages={1}]{titlepage.pdf}
+\newpage
+\
+\thispagestyle{empty}
+\newpage
 
 \newpage
 \clearpage
