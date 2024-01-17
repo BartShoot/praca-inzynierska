@@ -39,6 +39,46 @@ Pomimo tych problemów warto korzystać z tej struktury ponieważ niektóre oper
 
 \subsubsection{View}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/Picture13.png}
+    \caption{Główne okno aplikacji po starcie. Opracowanie własne.}
+    \label{fig:window}
+\end{figure}
 
+Aplikacja posiada jedno okno \autoref{fig:window}. 
+Użyta została klasa \textit{UiWindow} z biblioteki WPF UI pozwalająca łatwo zmodyfikować górny pasek by pasował do nowoczesnych systemów operacyjnych. 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Picture14.png}
+    \caption{Menu aplikacji. Opracowanie własne.}
+    \label{fig:mainmenu}
+\end{figure}
+
+Menu pozwala na zapisywanie odczytywanie lub czyszczenie stanu aplikacji. 
+Opcje te są też przypisane znanym skrótom klawiszowym w celu ułatwienia ich używania.
+
+Zawartość okna znajduje się w osobnym widoku edytora. Jest on podzielony na 3 główne elementy. Edytor \autoref{fig:editor} gdzie dodaje się nowe operacje, podgląd \autoref{fig:preview} gdzie pojawiają się wyniki operacji i panel od modyfikacji parametru \autoref{fig:params}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/Picture15.png}
+    \caption{Widok edytora. Opracowanie własne.}
+    \label{fig:editor}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/Picture16.png}
+    \caption{Podgląd wyników operacji. Opracowanie własne.}
+    \label{fig:preview}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Picture17.png}
+    \caption{Edycja parametrów. Opracowanie własne.}
+    \label{fig:params}
+\end{figure}
 \subsubsection{ViewModel}
