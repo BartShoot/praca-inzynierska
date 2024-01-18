@@ -94,7 +94,7 @@ Są to elementy biblioteki Nodify \cite{nodify} ze zmodyfikowanymi stylami w cel
 \end{figure}
 
 
-Po dodaniu operacji zostaje ona automatycznie przypisana do podglądu obrazu \autoref{fig:preview} umieszczonego pod edytorem. Użytkownik może później zmienić i wybrać które elementy są wyświetlane za pomocą klawiszy `1' i `2'.
+Po dodaniu operacji zostaje ona automatycznie przypisana do podglądu obrazu (\autoref{fig:preview}) umieszczonego pod edytorem. Użytkownik może później zmienić i wybrać które elementy są wyświetlane za pomocą klawiszy `1' i `2'.
 
 \begin{figure}[H]
     \centering
@@ -103,16 +103,25 @@ Po dodaniu operacji zostaje ona automatycznie przypisana do podglądu obrazu \au
     \label{fig:preview}
 \end{figure}
 
-Ostatni element widoku aplikacji to panel gdzie można edytować parametry wybranej operacji. 
-Każdy węzeł potrzebuje swojego osobnego widoku który poprawnie odwzorowuje parametry potrzebne do wykonania operacji. 
-Są one przypisane do pól w odpowiednich ViewModeli i każda zmiana użytkownika jest przesyłana do niego w celu zaktualizowania wyników operacji.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{images/Picture17.png}
     \caption{Edycja parametrów. Opracowanie własne.}
     \label{fig:params}
 \end{figure}
+
+Ostatni element widoku aplikacji to panel (\autoref{fig:params}) gdzie można edytować parametry wybranej operacji. 
+Każdy węzeł potrzebuje swojego osobnego widoku który poprawnie odwzorowuje parametry potrzebne do wykonania operacji. 
+Są one przypisane do pól w odpowiednich ViewModeli i każda zmiana użytkownika jest przesyłana do niego w celu zaktualizowania wyników operacji.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/Picture31.png}
+    \caption{Komunikat z błędem. Opracowanie własne.}
+    \label{fig:error}
+\end{figure}
+
+Po wprowadzeniu nieprawidłowej wartości pojawia się czerwony komunikat (\autoref{fig:error}) wskazujący dlaczego operacja nie mogła się wykonać.
 
 \subsubsection{ViewModel}
 
@@ -121,6 +130,7 @@ Większość z tych klas dziedziczy po ViewModelBase wziętym z \textit{Bindable
 Znajdują się w nim metody pomagające z obsługą interfejsu IPropertyChanged. 
 Jest on kluczowy w tworzeniu aplikacji reagującej natychmiastowo na dane wejściowe od użytkownika w technologii WPF. 
 Dają one znać komponentom do których przypisane są wartości, że się zmieniły i trzeba je zaktualizować.
+
 
 \begin{figure}[H]
     \centering

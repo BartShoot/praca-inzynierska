@@ -1,3 +1,23 @@
-\textit{Na koniec należy podsumować, co było celem pracy. 
-Czy cel ten został osiągnięty. Jakie są możliwe wnioski. 
-Czy są dalsze możliwości rozwoju.}
+Celem pracy było stworzenie aplikacji do przetwarzania obrazów z interfejsem graficznym.
+Interakcja użytkownika z programem odbywa się przez edytor węzłowy, a parametry odpowiadają tym używanym w bibliotece OpenCV. 
+Wyniki obliczeń zostają wyświetlane natychmiastowo, a parametry które można wprowadzić są sprawdzane pod kątem poprawności.  
+Cel został zrealizowany.
+
+Projekt jednak ma duży potencjał na rozwój. Inspirując się innymi projektami z podobnymi edytorami można wymienić całą listę: 
+\begin{itemize}
+    \item tworzenie i zapisywanie parametrów do użycia jak zmienne w programowaniu - zmiana wartości w jedynym miejscu zmienia też jej użycia w innych operacjach,
+    \item możliwość łączenia kilku bloków w jeden przez użytkownika np. \textit{Blur} i \textit{EdgeDetect} ponieważ są one często używane razem,
+    \item grupowanie, układanie i komentarze w edytorze,
+    \item miniaturka z podglądem wyniku umieszczona na każdym węźle,
+    \item eksportowanie pliku w sposób pozwalający zmianę parametrów i podgląd wyników przez zewnętrzny program.
+\end{itemize}
+
+OpenCV jest bardzo obszerną biblioteką z racji czego projekt został ograniczony do prostych operacji. Obszary do poprawy to:
+\begin{itemize}
+    \item zwiększenie ilości metod przetwarzania obrazów dostępnych w aplikacji,
+    \item wsparcie dla innych typów danych jak wideo, chmury punktów itd.,
+    \item użycie funkcji korzystających z sieci neuronowych czy uczenia maszynowego,
+    \item wybór metody gdy więcej niż jedna realizuje ten sam cel.
+\end{itemize}
+
+Obecnie program działa tylko na komputerach z systemem Windows, wprowadzenie wsparcia dla uruchamiania na innych platformach pozwoli na zwiększenie potencjalnej liczby użytkowników. Do rozważenia jest skorzystanie z obliczeń w chmurze - nie każdy posiada wystarczająco szybkie urządzenia, a jako bonus użytkownicy mobilni też mogli by korzystać z aplikacji z zadowalającymi osiągami. 
