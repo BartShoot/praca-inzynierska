@@ -10,7 +10,7 @@ Ich zadaniem jest też obsługa danych wprowadzanych przez interfejs aplikacji.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture11.png}
+    \includegraphics[width=1\linewidth]{images/Picture11.jpg}
     \caption{Diagram operacji. Opracowanie własne.}
     \label{fig:modelDiag}
 \end{figure}
@@ -19,19 +19,19 @@ W NoodleCV warstwa \textit{Model} jest minimalna \autoref{fig:modelDiag}.
 Posiada interfejs IOperation odpowiadający za formę wszystkich implementacji operacji. 
 Posiadają generyczna kolekcje wejść \textit{Inputs} oraz wyjść \textit{Outputs}.
 Jedyna metoda zdefiniowana w nich to wykonanie operacji - zwraca ona obiekt \textit{Result}.
-Informuje ona następne warstwy czy operacja się powiodła, jeżeli nie to dlaczego. 
-Listę błędów otrzymujemy dzięki sprawdzeniu wejść za pomocą biblioteki Fluent Validation. 
+Informuje ona następne warstwy czy operacja się powiodła, jeżeli nie to dodatkowo zawiera listę błędów. 
+Walidację wykonujemy sprawdzając wejścia za pomocą biblioteki Fluent Validation. 
 Każda operacja wymaga swojego własnego walidatora danych i zapewnia tym bezpieczne działanie aplikacji - użytkownik nie powinien być w stanie doprowadzić programu do błędu złym parametrem operacji.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/Picture12.png}
+    \includegraphics[width=0.6\linewidth]{images/Picture12.jpg}
     \caption{Diagram generycznych typów przechowujących dane operacji. Opracowanie własne.}
     \label{fig:input}
 \end{figure}
 
 Wejścia i wyjścia parametrów operacji mogą być w wielu różnych typach więc kolekcje przyjmujące te dane musiały być generyczne. 
-Daje to dużo większą elastyczność ale może utrudnić implementację. 
+Daje to dużo większą elastyczność, ale może utrudnić implementację. 
 Tworząc operacje i ich późniejsze \textit{ViewModel}'e trzeba zachować szczególną ostrożność. 
 Przy tworzeniu nowych modeli zakładamy że obiekt w tym miejscu kolekcji będzie miał odpowiedni typ. 
 Przy odczytywaniu danych z tej kolekcji nie ma informacji co to za klasa, należy poprawnie narzucić jej rodzaj inaczej napotkamy błąd i aplikacja wyłącza się.
@@ -41,7 +41,7 @@ Pomimo tych problemów warto korzystać z tej struktury ponieważ niektóre oper
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/Picture19.png}
+    \includegraphics[width=0.8\linewidth]{images/Picture19.jpg}
     \caption{Diagram klas używanych do tworzenia interfejsu. Opracowanie własne.}
     \label{fig:viewArch}
 \end{figure}
@@ -52,7 +52,7 @@ Drugi konwerter zajmuje się pobieraniem danych z obrazu przetwarzanego przez op
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture13.png}
+    \includegraphics[width=1\linewidth]{images/Picture13.jpg}
     \caption{Główne okno aplikacji z przykładowymi operacjami. Opracowanie własne.}
     \label{fig:window}
 \end{figure}
@@ -62,7 +62,7 @@ Użyta została klasa \textit{UiWindow} z biblioteki WPF UI \cite{wpfui} pozwala
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/Picture14.png}
+    \includegraphics[width=0.6\linewidth]{images/Picture14.jpg}
     \caption{Menu aplikacji. Opracowanie własne.}
     \label{fig:mainmenu}
 \end{figure}
@@ -74,7 +74,7 @@ Zawartość okna znajduje się w osobnym widoku edytora. Jest on podzielony na 3
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture15.png}
+    \includegraphics[width=1\linewidth]{images/Picture15.jpg}
     \caption{Widok edytora. Opracowanie własne.}
     \label{fig:editor}
 \end{figure}
@@ -88,7 +88,7 @@ Są to elementy biblioteki Nodify \cite{nodify} ze zmodyfikowanymi stylami w cel
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/Picture18.png}
+    \includegraphics[width=0.6\linewidth]{images/Picture18.jpg}
     \caption{Menu kontekstowe edytora. Opracowanie własne.}
     \label{fig:context}
 \end{figure}
@@ -98,14 +98,14 @@ Po dodaniu operacji zostaje ona automatycznie przypisana do podglądu obrazu (\a
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture16.png}
+    \includegraphics[width=1\linewidth]{images/Picture16.jpg}
     \caption{Podgląd wyników operacji. Opracowanie własne.}
     \label{fig:preview}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/Picture17.png}
+    \includegraphics[width=0.6\linewidth]{images/Picture17.jpg}
     \caption{Edycja parametrów. Opracowanie własne.}
     \label{fig:params}
 \end{figure}
@@ -116,7 +116,7 @@ Są one przypisane do pól w odpowiednich ViewModeli i każda zmiana użytkownik
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/Picture31.png}
+    \includegraphics[width=0.8\linewidth]{images/Picture31.jpg}
     \caption{Komunikat z błędem. Opracowanie własne.}
     \label{fig:error}
 \end{figure}
@@ -134,7 +134,7 @@ Dają one znać komponentom do których przypisane są wartości, że się zmien
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture20.png}
+    \includegraphics[width=1\linewidth]{images/Picture20.jpg}
     \caption{Diagram ViewModeli operacji. Opracowanie własne.}
     \label{fig:vmDiagOperation}
 \end{figure}
@@ -143,7 +143,7 @@ Każda operacja potrzebuje swój ViewModel. Dbają one o poprawne wyświetlanie 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture21.png}
+    \includegraphics[width=1\linewidth]{images/Picture21.jpg}
     \caption{Diagram ViewModeli aplikacji. Opracowanie własne.}
     \label{fig:vmDiagEditor}
 \end{figure}

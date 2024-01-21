@@ -3,7 +3,7 @@ Zaimplementowano najpopularniejsze \cite{mostpop} metody, które pasowały do ob
 \subsubsection{Blur}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture22.png}
+    \includegraphics[width=1\linewidth]{images/Picture22.jpg}
     \caption{Operacja \textit{Blur}. Opracowanie własne.}
     \label{fig:blur}
 \end{figure}
@@ -14,7 +14,7 @@ Zaimplementowana w oparciu o \textit{Gaussian Blur} \cite{gauss}. Parametr \text
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture23.png}
+    \includegraphics[width=1\linewidth]{images/Picture23.jpg}
     \caption{Operacja \textit{ChangeColorspace}. Opracowanie własne.}
     \label{fig:colorconv}
 \end{figure}
@@ -26,19 +26,18 @@ Jej jedynym parametrem jest kod z rodzajem konwersji np. \textit{BGR2GRAY} oznac
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture24.png}
+    \includegraphics[width=1\linewidth]{images/Picture24.jpg}
     \caption{Operacja \textit{Crop}. Opracowanie własne.}
     \label{fig:crop}
 \end{figure}
 
-Tutaj implementacja to nie metoda ale stworzenie nowego \textit{Mat}'a \cite{mat}.
-Do jego konstruktora zostają dodane koordynaty startowe oraz rozmiar nowego prostokąta który wyznacza co będzie znajdowało się w nowym obrazie.
+Operacja przycinania (ang. \textit{crop}) jest realizowana poprzez wykorzystanie koordynatów początkowych, a także określenia wysokości i szerokości nowo tworzonego prostokąta. Po zdefiniowaniu tych czterech parametrów, użytkownik uzyskuje nowy obraz, którego wymiary odpowiadają podanym wartościom, a punkt początkowy określa jego położenie w ramach oryginalnego obrazu.
 
 \subsubsection{EdgeDetect}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture25.png}
+    \includegraphics[width=1\linewidth]{images/Picture25.jpg}
     \caption{Operacja \textit{EdgeDetect}. Opracowanie własne.}
     \label{fig:edgeDetect}
 \end{figure}  
@@ -51,7 +50,7 @@ Wartości powyżej drugiego parametru są uznawane za krawędź, a te które są
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{images/Picture26.png}
+    \includegraphics[width=1\linewidth]{images/Picture26.jpg}
     \caption{Operacja \textit{Resize}. Opracowanie własne.}
     \label{fig:resize}
 \end{figure} 

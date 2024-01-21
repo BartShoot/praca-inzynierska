@@ -8,6 +8,7 @@
 \usepackage{lipsum}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{xurl}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{float}
 \usepackage{fontspec}
@@ -18,6 +19,8 @@
 \setlength{\parskip}{6pt}
 \usepackage[sorting=none, style=nature]{biblatex}
 \addbibresource{bibliography.bib}
+\setcounter{biburllcpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
 \babelprovide[transforms=oneletter.nobreak]{polish}
 \hypersetup{linkcolor=black}
 \usepackage[all]{hypcap}
@@ -62,4 +65,7 @@
 \addcontentsline{toc}{section}{Spis rysunków}
 \input{sections/imagelist}
 \newpage
+
+\addcontentsline{toc}{section}{A. Załączniki}
+\section*{A. Załączniki}
 \end{document}
