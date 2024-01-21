@@ -8,7 +8,7 @@ Zaimplementowano najpopularniejsze \cite{mostpop} metody, które pasowały do ob
     \label{fig:blur}
 \end{figure}
 
-Zaimplementowana w oparciu o \textit{Gaussian Blur} \cite{gauss}. Parametr \textit{Size} musi być nieparzysty ponieważ opisuje on rozmiar maski na podstawie której wartość piksela jest uśredniana - potrzeby jest środek. \textit{Strength} opisuje natomiast odchylenie standardowe jakie będzie zastosowane przy przeprowadzaniu operacji.
+Zaimplementowana w oparciu o \textit{Gaussian Blur} \cite{gauss} (\autoref{fig:blur}). Parametr \textit{Size} musi być nieparzysty ponieważ opisuje on rozmiar maski na podstawie której wartość piksela jest uśredniana - potrzeby jest środek. \textit{Strength} opisuje natomiast odchylenie standardowe jakie będzie zastosowane przy przeprowadzaniu operacji.
 
 \subsubsection{ChangeColorspace}
 
@@ -19,7 +19,7 @@ Zaimplementowana w oparciu o \textit{Gaussian Blur} \cite{gauss}. Parametr \text
     \label{fig:colorconv}
 \end{figure}
 
-Jest to funkcja \textit{CvtColor} \cite{cvtcol}. Konwertuje ona przestrzeń kolorów obrazu i dopasowuje ilość kanałów.
+Jest to funkcja \textit{CvtColor} \cite{cvtcol} (\autoref{fig:colorconv}). Konwertuje ona przestrzeń kolorów obrazu i dopasowuje ilość kanałów.
 Jej jedynym parametrem jest kod z rodzajem konwersji np. \textit{BGR2GRAY} oznaczający przejście ze zwykłego kolorowego zdjęcia na biało-czarne.
 
 \subsubsection{Crop}
@@ -31,7 +31,7 @@ Jej jedynym parametrem jest kod z rodzajem konwersji np. \textit{BGR2GRAY} oznac
     \label{fig:crop}
 \end{figure}
 
-Operacja przycinania (ang. \textit{crop}) jest realizowana poprzez wykorzystanie koordynatów początkowych, a także określenia wysokości i szerokości nowo tworzonego prostokąta. Po zdefiniowaniu tych czterech parametrów, użytkownik uzyskuje nowy obraz, którego wymiary odpowiadają podanym wartościom, a punkt początkowy określa jego położenie w ramach oryginalnego obrazu.
+Operacja przycinania (ang. \textit{crop}) (\autoref{fig:crop}) jest realizowana poprzez wykorzystanie koordynatów początkowych, a także określenia wysokości i szerokości nowo tworzonego prostokąta. Po zdefiniowaniu tych czterech parametrów, użytkownik uzyskuje nowy obraz, którego wymiary odpowiadają podanym wartościom, a punkt początkowy określa jego położenie w ramach oryginalnego obrazu.
 
 \subsubsection{EdgeDetect}
 
@@ -42,7 +42,7 @@ Operacja przycinania (ang. \textit{crop}) jest realizowana poprzez wykorzystanie
     \label{fig:edgeDetect}
 \end{figure}  
 
-Metoda \textit{Canny} \cite{canny} to jeden z kilku dostępnych algorytmów wykrywania krawędzi. Jako parametry wejściowe należy podać niższy i wyższy próg akceptacji.
+Metoda \textit{Canny} \cite{canny} (\autoref{fig:edgeDetect}) to jeden z kilku dostępnych algorytmów wykrywania krawędzi. Jako parametry wejściowe należy podać niższy i wyższy próg akceptacji.
 Jeżeli krawędź jest mało wyraźna zostaje odrzucona przez algorytm. 
 Wartości powyżej drugiego parametru są uznawane za krawędź, a te które są pomiędzy zostają włączone do wyniku jako element łączący krawędzie jeżeli taki jest. 
 
@@ -55,4 +55,4 @@ Wartości powyżej drugiego parametru są uznawane za krawędź, a te które są
     \label{fig:resize}
 \end{figure} 
 
-\textit{Resize} jest wykonywane przez metodę o tej samej nazwie z biblioteki OpenCV \cite{resize}. Po podaniu nowych wymiarów otrzymujemy obraz stworzony na podstawie oryginalnego ze zmienioną rozdzielczością.
+\textit{Resize} (\autoref{fig:resize}) jest wykonywane przez metodę o tej samej nazwie z biblioteki OpenCV \cite{resize}. Po podaniu nowych wymiarów otrzymujemy obraz stworzony na podstawie oryginalnego ze zmienioną rozdzielczością.

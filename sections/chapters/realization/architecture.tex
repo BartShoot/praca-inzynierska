@@ -15,7 +15,7 @@ Ich zadaniem jest też obsługa danych wprowadzanych przez interfejs aplikacji.
     \label{fig:modelDiag}
 \end{figure}
 
-W NoodleCV warstwa \textit{Model} jest minimalna \autoref{fig:modelDiag}. 
+W NoodleCV warstwa \textit{Model} jest minimalna (\autoref{fig:modelDiag}). 
 Posiada interfejs IOperation odpowiadający za formę wszystkich implementacji operacji. 
 Posiadają generyczna kolekcje wejść \textit{Inputs} oraz wyjść \textit{Outputs}.
 Jedyna metoda zdefiniowana w nich to wykonanie operacji - zwraca ona obiekt \textit{Result}.
@@ -30,7 +30,7 @@ Każda operacja wymaga swojego własnego walidatora danych i zapewnia tym bezpie
     \label{fig:input}
 \end{figure}
 
-Wejścia i wyjścia parametrów operacji mogą być w wielu różnych typach więc kolekcje przyjmujące te dane musiały być generyczne. 
+Wejścia i wyjścia parametrów operacji mogą być w wielu różnych typach więc kolekcje przyjmujące te dane musiały być generyczne (\autoref{fig:input}). 
 Daje to dużo większą elastyczność, ale może utrudnić implementację. 
 Tworząc operacje i ich późniejsze \textit{ViewModel}'e trzeba zachować szczególną ostrożność. 
 Przy tworzeniu nowych modeli zakładamy że obiekt w tym miejscu kolekcji będzie miał odpowiedni typ. 
@@ -46,7 +46,7 @@ Pomimo tych problemów warto korzystać z tej struktury ponieważ niektóre oper
     \label{fig:viewArch}
 \end{figure}
 
-Warstwa widoku składa się z głównego okna, edytora i jego elementów.
+Warstwa widoku (\autoref{fig:viewArch}) składa się z głównego okna, edytora i jego elementów.
 Dodatkowo użyto klasy statycznej posiadającej metody pozwalające na konwersję obrazów z formatu używanego przez operacje na format akceptowany przez wyświetlanie obrazu w WPF.
 Drugi konwerter zajmuje się pobieraniem danych z obrazu przetwarzanego przez operację i stworzenie opisu zawierający jego rozmiar oraz ilość kanałów koloru.
 
@@ -57,17 +57,17 @@ Drugi konwerter zajmuje się pobieraniem danych z obrazu przetwarzanego przez op
     \label{fig:window}
 \end{figure}
 
-Aplikacja posiada jedno okno \autoref{fig:window}. 
-Użyta została klasa \textit{UiWindow} z biblioteki WPF UI \cite{wpfui} pozwalająca łatwo zmodyfikować górny pasek by pasował do nowoczesnych systemów operacyjnych. 
+Aplikacja posiada jedno okno (\autoref{fig:window}). 
+Użyta została klasa \textit{UiWindow} z biblioteki WPF~UI~\cite{wpfui} pozwalająca łatwo zmodyfikować górny pasek by pasował do nowoczesnych systemów operacyjnych. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/Picture14.jpg}
+    \includegraphics[width=0.6\linewidth]{images/Picture14.png}
     \caption{Menu aplikacji. Opracowanie własne.}
     \label{fig:mainmenu}
 \end{figure}
 
-Menu pozwala na zapisywanie odczytywanie lub czyszczenie stanu aplikacji. 
+Menu (\autoref{fig:mainmenu}) pozwala na zapisywanie odczytywanie lub czyszczenie stanu aplikacji. 
 Opcje te są też przypisane znanym skrótom klawiszowym w celu ułatwienia ich używania.
 
 Zawartość okna znajduje się w osobnym widoku edytora. Jest on podzielony na 3 główne elementy. Edytor (\autoref{fig:editor}) gdzie dodaje się nowe operacje, podgląd (\autoref{fig:preview}) gdzie pojawiają się wyniki operacji i panel od modyfikacji parametru (\autoref{fig:params}).
@@ -123,9 +123,10 @@ Są one przypisane do pól w odpowiednich ViewModeli i każda zmiana użytkownik
 
 Po wprowadzeniu nieprawidłowej wartości pojawia się czerwony komunikat (\autoref{fig:error}) wskazujący dlaczego operacja nie mogła się wykonać.
 
+\newpage
 \subsubsection{ViewModel}
 
-W przypadku tego projektu warstwa komunikacji między modelem i widokiem jest najbardziej obszerna. 
+W przypadku tego projektu warstwa komunikacji między modelem i widokiem jest najbardziej obszerna (\autoref{fig:vmDiagOperation}, \autoref{fig:vmDiagEditor}). 
 Większość z tych klas dziedziczy po ViewModelBase wziętym z \textit{BindableBase} \cite{prismlibraryprism} z biblioteki \textit{Prism} \cite{prismlibrary}. 
 Znajdują się w nim metody pomagające z obsługą interfejsu IPropertyChanged. 
 Jest on kluczowy w tworzeniu aplikacji reagującej natychmiastowo na dane wejściowe od użytkownika w technologii WPF. 
@@ -139,7 +140,7 @@ Dają one znać komponentom do których przypisane są wartości, że się zmien
     \label{fig:vmDiagOperation}
 \end{figure}
 
-Każda operacja potrzebuje swój ViewModel. Dbają one o poprawne wyświetlanie i przypisanie wartości z modelu. Zajmują się też uruchomieniem obliczeń i zwróceniem ich rezultatu. Każdy z nich posiada też metodę pozwalającą na skopiowanie parametrów z innej operacji. Jest to wykorzystane przy odczytywaniu danych z zapisanego stanu.
+Każda operacja potrzebuje swój ViewModel (\autoref{fig:vmDiagOperation}). Dbają one o poprawne wyświetlanie i przypisanie wartości z modelu. Zajmują się też uruchomieniem obliczeń i zwróceniem ich rezultatu. Każdy z nich posiada też metodę pozwalającą na skopiowanie parametrów z innej operacji. Jest to wykorzystane przy odczytywaniu danych z zapisanego stanu.
 
 \begin{figure}[H]
     \centering
@@ -148,7 +149,7 @@ Każda operacja potrzebuje swój ViewModel. Dbają one o poprawne wyświetlanie 
     \label{fig:vmDiagEditor}
 \end{figure}
 
-Pozostałe ViewModele dalej korzystają z tej samej klasy bazowej.
+Pozostałe ViewModele (\autoref{fig:vmDiagEditor}) dalej korzystają z tej samej klasy bazowej.
 MainViewModel tworzy jedynie komendy do których odnosi się menu główne, większość logiki programu jest umieszczona w EditorViewModelu.
 Jest tam umieszczona kolekcja przechowująca stworzone węzły i ich stany oraz połączenia między nimi.
 Klasa NodeViewModel odpowiada bloczkom w edytorze. Przechowują one ViewModel odpowiedniej operacji, ale też pozycje na ekranie wraz z wejściami i wyjściami. 
